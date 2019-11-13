@@ -1,12 +1,11 @@
-#include <iostream>
 
 class Perceptron{
 
-	void train(int[]){
+	void train(int points, bool classes){
 		
 	}
 	
-	bool infer(int[]){
+	bool infer(int points){
 				
 	}
 
