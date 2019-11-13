@@ -1,11 +1,11 @@
 
 class Perceptron{
 
-	void train(int points, bool classes){
+	void train(int points[], bool classes[]){
 		
 	}
 	
-	bool infer(int points){
+	bool infer(int points[]){
 				
 	}
 
