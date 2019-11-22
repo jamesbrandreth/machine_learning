@@ -25,7 +25,7 @@ class Perceptron {
 			weights = w;
 		}
 
-		bool train(vector<Point> points, float learning_rate, int iteration_limit=100){
+		bool train(vector<Point> points, float learning_rate=1, int iteration_limit=100){
 			/*
 			Takes a vector of points, and finds a set of weights
 			*/
