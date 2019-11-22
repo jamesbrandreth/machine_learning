@@ -29,18 +29,18 @@ class Perceptron {
 			/*
 			Takes a vector of points, and finds a set of weights
 			*/
-			bool errors = false;
+			bool converged = false;
 			int i=0;
-			while (i < iteration_limit && !errors){
+			while (i < iteration_limit && !converged){
                 // Iterate until convergence or hitting the limit
-                errors = false;
+                converged = true;
 				for(vector<Point>::iterator it_pt = points.begin(); it_pt != points.end(); it_pt++){
                     // iterate through each point, evaluating the inferred class each time
                     Point pt = *it_pt;
 					bool result = infer(pt);
                     if(result != pt.getClass()){
                         // If the point is missclassified, adjust the weights:
-                        errors = true;
+                        converged = false;
                         float sign = pt.getClass() ? 1.0 : -1.0;
                         
                         vector<float> coordinates = pt.getCoordinates();
