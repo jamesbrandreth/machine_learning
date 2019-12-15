@@ -1,25 +1,19 @@
 // Point
 #ifndef POINT
 #define POINT
+
+#include <vector>
+
 class Point {
 
-	private:
-		std::vector<float> coordinates;
-		bool point_class;
-	
-	public:
-		Point(std::vector<float> coords, bool pc){
-			coordinates = coords;
-			point_class = pc;
-		}
+private:
+    std::vector<float> coordinates;
+    bool point_class;
 
-		std::vector<float> getCoordinates(){
-			return coordinates;
-		}
-    
-        bool getClass(){
-            return point_class;
-        }
+public:
+    Point(std::vector<float> coords, bool pc);
+    std::vector<float> getCoordinates();
+    bool getClass();
 	
 };
 

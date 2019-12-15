@@ -5,12 +5,15 @@
 
 #include "point.h"
 
+#include <numeric>
+#include <vector>
+
 using namespace std;
 
 class Perceptron {
 private:
 
-    vector<float> weights;
+    std::vector<float> weights;
 
     float dist(Point pt);
 

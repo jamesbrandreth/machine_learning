@@ -11,8 +11,8 @@ main.o: main.cpp
 perceptron.o: perceptron.cpp point.o
 	$(CC) -std=c++11 -c perceptron.cpp
 
-point.o: point.h
-	$(CC) -std=c++11 -c point.h
+point.o: point.cpp
+	$(CC) -std=c++11 -c point.cpp
 
 clean:
 	rm -rf *o main
