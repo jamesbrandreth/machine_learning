@@ -3,7 +3,7 @@
 #ifndef SVM
 #define SVM
 
-#include "../point.h"
+#include "point.h"
 
 class SVM {
 private:
