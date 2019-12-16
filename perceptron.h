@@ -14,7 +14,6 @@ class Perceptron {
 private:
 
     std::vector<float> weights;
-
     float dist(Point pt);
 
 public:

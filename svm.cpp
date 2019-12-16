@@ -6,11 +6,11 @@ float SVM::dist(Point pt){
     coordinates.push_back(1);
     float product = inner_product(weights.begin(), weights.end(), coordinates.begin(), 0.0);
     return product;
-}
+};
 
 void SVM::set_weights(std::vector<float> w){
     weights = w;
-}
+};
 
 bool SVM::train(std::vector<Point> points, float learning_rate=1, int iteration_limit=100){
     /*
@@ -19,4 +19,4 @@ bool SVM::train(std::vector<Point> points, float learning_rate=1, int iteration_
     
     //TODO
     
-}
+};

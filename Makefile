@@ -10,6 +10,9 @@ main.o: main.cpp
 
 perceptron.o: perceptron.cpp point.o
 	$(CC) -std=c++11 -c perceptron.cpp
+	
+svm.o: svm.cpp point.o
+	$(CC) -std=c++11 -c svm.cpp
 
 point.o: point.cpp
 	$(CC) -std=c++11 -c point.cpp

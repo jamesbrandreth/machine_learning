@@ -5,7 +5,10 @@
 
 #include "point.h"
 
-class SVM {
+#include <numeric>
+#include <vector>
+
+class Svm {
 private:
     std::vector<float> weights;
     float dist(Point pt);
@@ -13,7 +16,6 @@ private:
 public:
     void set_weights(std::vector<float> w);
     bool train(std::vector<Point> points, float learning_rate=1, int iteration_limit=100);
-    
-}
+};
 
 #endif

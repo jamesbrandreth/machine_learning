@@ -3,8 +3,10 @@
 #include <vector>
 #include <numeric>
 
-#include "perceptron.h"
 #include "point.h"
+#include "perceptron.h"
+#include "svm.h"
+
 
 using namespace std;
 
