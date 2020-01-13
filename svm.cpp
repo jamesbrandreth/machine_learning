@@ -18,5 +18,10 @@ bool SVM::train(std::vector<Point> points, float learning_rate=1, int iteration_
      */
     
     //TODO
+	for(std::vector<Point>::iterator ip_pt = points.begin(); it_pt != points.end(); it_pt++){
+		Point pt = *it_pt;
+		bool result = infer(pt);
+
+	}
     
 };

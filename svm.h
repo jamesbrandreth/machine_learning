@@ -16,6 +16,8 @@ private:
 public:
     void set_weights(std::vector<float> w);
     bool train(std::vector<Point> points, float learning_rate=1, int iteration_limit=100);
+    float infer(Point pt);
+    std::vector<float> getWeights();
 };
 
 #endif
