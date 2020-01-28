@@ -14,6 +14,9 @@ perceptron.o: perceptron.cpp point.o
 svm.o: svm.cpp point.o
 	$(CC) -std=c++11 -c svm.cpp
 
+decision_tree.o: decision_tree.cpp point.o
+	$(CC) -std=c++11 -c decision_tree.cpp
+
 point.o: point.cpp
 	$(CC) -std=c++11 -c point.cpp
 
