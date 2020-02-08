@@ -6,6 +6,7 @@
 #include "point.h"
 #include "perceptron.h"
 #include "svm.h"
+#include "space.h"
 
 
 using namespace std;
@@ -13,31 +14,36 @@ using namespace std;
 
 int main(){
 	
-    vector<Point> points;
+//    vector<Point> points;
+//
+//    points.push_back(Point({0.0,0.0}, false));
+//    points.push_back(Point({1.0,0.0}, false));
+//    points.push_back(Point({2.0,0.0}, false));
+//    points.push_back(Point({0.0,2.0}, true));
+//    points.push_back(Point({1.0,2.0}, true));
+//    points.push_back(Point({2.0,2.0}, true));
+//
+//	Perceptron p;
+//	p.set_weights({0.0,0.0,0.0});
+//
+//    p.train(points, 1);
+//
+//	vector<float> weights = p.getWeights();
+//
+//    cout << "Weights:\n";
+//	for(vector<float>::iterator it = weights.begin(); it != weights.end(); it++){
+//		cout << *it << "\n";
+//	}
+//
+//    cout << "Point classes:\n";
+//    for(int i=0; i!=6; i++){
+//        cout << p.infer(points[i]) << "\n";
+//    }
     
-    points.push_back(Point({0.0,0.0}, false));
-    points.push_back(Point({1.0,0.0}, false));
-    points.push_back(Point({2.0,0.0}, false));
-    points.push_back(Point({0.0,2.0}, true));
-    points.push_back(Point({1.0,2.0}, true));
-    points.push_back(Point({2.0,2.0}, true));
-
-	Perceptron p;
-	p.set_weights({0.0,0.0,0.0});
-
-    p.train(points, 1);
-
-	vector<float> weights = p.getWeights();
-	
-    cout << "Weights:\n";
-	for(vector<float>::iterator it = weights.begin(); it != weights.end(); it++){
-		cout << *it << "\n";
-	}
-    
-    cout << "Point classes:\n";
-    for(int i=0; i!=6; i++){
-        cout << p.infer(points[i]) << "\n";
-    }
+    Space space;
+    space.loadFromCSV("/Users/james/Downloads/iris.data",0);
+    string s = space.stringifyTable();
+    cout << s;
     
 	return 0;
 }
