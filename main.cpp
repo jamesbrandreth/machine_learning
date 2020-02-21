@@ -41,8 +41,10 @@ int main(){
 //    }
     
     Space space;
-    space.loadFromCSV("/Users/james/Downloads/iris.data",0);
-    string s = space.stringifyTable();
+    space.loadFromCSV("/Users/james/Downloads/iris.data",4);
+//    string s = space.stringifyTable();
+//    cout << s;
+    string s = space.stringifyClassNames();
     cout << s;
     
 	return 0;

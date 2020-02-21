@@ -9,19 +9,18 @@ void Space::loadFromCSV(const char filename[], int class_column){
     while(std::getline(file, line)){
         std::vector<std::string> row;
         std::string cell;
-        std::stringstream stream_line(line);
-        while(std::getline(stream_line, cell, ',')){
-            row.push_back(cell);
+        if (line != ""){
+            std::stringstream stream_line(line);
+            while(std::getline(stream_line, cell, ',')){
+                row.push_back(cell);
+            }
+            table.push_back(row);
         }
-        table.push_back(row);
     }
     
     // get all the classes
-    std::vector<std::string> classes;
     for(int i=0; i<table.size(); i++){
-        for(int j=0; j<classes.size(); j++){
-            
-        }
+        classes.insert(table[i][class_column]);
     }
 }
 
@@ -36,6 +35,15 @@ std::string Space::stringifyTable(){
         }
         s[s.size()-2] = ' ';
         s[s.size()-1] = '\n';
+    }
+    return s;
+}
+
+std::string Space::stringifyClassNames(){
+    std::string s = "";
+    for(std::set<std::string>::iterator it = classes.begin(); it != classes.end(); it++){
+        s += *it;
+        s += ", ";
     }
     return s;
 }
