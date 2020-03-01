@@ -11,10 +11,10 @@ std::string ClassifiedPoint::getClass(){
 
 std::string ClassifiedPoint::stringify(){
     std::string s = "";
-//    for(std::vector<float>::iterator it = coordinates.begin(); it != coordinates.end(); it++){
-//        s += std::to_string(*it);
-//        s += ", ";
-//    }
-//    s += point_class;
+    for(std::vector<float>::iterator it = coordinates.begin(); it != coordinates.end(); it++){
+        s += std::to_string(*it);
+        s += ", ";
+    }
+    s += point_class;
     return s;
 }

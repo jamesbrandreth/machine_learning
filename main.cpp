@@ -13,6 +13,8 @@ using namespace util;
 
 
 int main(int argc, const char * argv[]){
+    
+    cout << "START";
 	
     vector<ClassifiedPoint> points;
 
@@ -20,7 +22,7 @@ int main(int argc, const char * argv[]){
     
     for (vector<ClassifiedPoint>::iterator it = points.begin(); it != points.end(); it++){
         ClassifiedPoint point = *it;
-        cout << point.stringify() << "\n";
+        cout << "ROW: " << point.stringify() << "\n";
     }
 
 	return 0;
