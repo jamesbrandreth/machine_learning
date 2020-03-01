@@ -4,6 +4,7 @@
 #include <numeric>
 
 #include "point.h"
+#include "classified_point.h"
 #include "util.h"
 
 
@@ -13,12 +14,12 @@ using namespace util;
 
 int main(int argc, const char * argv[]){
 	
-    vector<Point> points;
+    vector<ClassifiedPoint> points;
 
-    points = loadPointsFromCSV(argv[1]);
+    points = loadClassifiedPointsFromCSV(argv[1], stoi(argv[2]));
     
-    for (vector<Point>::iterator it = points.begin(); it != points.end(); it++){
-        Point point = *it;
+    for (vector<ClassifiedPoint>::iterator it = points.begin(); it != points.end(); it++){
+        ClassifiedPoint point = *it;
         cout << point.stringify() << "\n";
     }
 

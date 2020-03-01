@@ -8,11 +8,11 @@
 #include <vector>
 
 #include "point.h"
-//#include "classified_point.h"
+#include "classified_point.h"
 
 namespace util {
     std::vector<Point> loadPointsFromCSV(const char filepath[]);
-//    std::vector<ClassifiedPoint> loadClassifiedPointsFromCSV(const char filepath[], int class_column);
+    std::vector<ClassifiedPoint> loadClassifiedPointsFromCSV(const char filepath[], int class_column);
 }
 
 #endif
