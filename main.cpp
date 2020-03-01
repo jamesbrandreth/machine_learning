@@ -4,49 +4,24 @@
 #include <numeric>
 
 #include "point.h"
-#include "perceptron.h"
-#include "svm.h"
-#include "space.h"
+#include "util.h"
 
 
 using namespace std;
+using namespace util;
 
 
-int main(){
+int main(int argc, const char * argv[]){
 	
-//    vector<Point> points;
-//
-//    points.push_back(Point({0.0,0.0}, false));
-//    points.push_back(Point({1.0,0.0}, false));
-//    points.push_back(Point({2.0,0.0}, false));
-//    points.push_back(Point({0.0,2.0}, true));
-//    points.push_back(Point({1.0,2.0}, true));
-//    points.push_back(Point({2.0,2.0}, true));
-//
-//	Perceptron p;
-//	p.set_weights({0.0,0.0,0.0});
-//
-//    p.train(points, 1);
-//
-//	vector<float> weights = p.getWeights();
-//
-//    cout << "Weights:\n";
-//	for(vector<float>::iterator it = weights.begin(); it != weights.end(); it++){
-//		cout << *it << "\n";
-//	}
-//
-//    cout << "Point classes:\n";
-//    for(int i=0; i!=6; i++){
-//        cout << p.infer(points[i]) << "\n";
-//    }
+    vector<Point> points;
+
+    points = loadPointsFromCSV(argv[1]);
     
-    Space space;
-    space.loadFromCSV("/Users/james/Downloads/iris.data",4);
-//    string s = space.stringifyTable();
-//    cout << s;
-    string s = space.stringifyClassNames();
-    cout << s;
-    
+    for (vector<Point>::iterator it = points.begin(); it != points.end(); it++){
+        Point point = *it;
+        cout << point.stringify() << "\n";
+    }
+
 	return 0;
 }
 

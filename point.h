@@ -3,18 +3,17 @@
 #define POINT
 
 #include <vector>
+#include <string>
 
 class Point {
 
-private:
+protected:
     std::vector<float> coordinates;
-    bool point_class;
 
 public:
-    Point(std::vector<float> coords, bool pc);
+    Point(std::vector<float> coords);
     std::vector<float> getCoordinates();
-    bool getClass();
-	
+    std::string stringify();
 };
 
 #endif

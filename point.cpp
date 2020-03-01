@@ -1,14 +1,18 @@
 #include "point.h"
 
-Point::Point(std::vector<float> coords, bool pc){
+Point::Point(std::vector<float> coords){
 	coordinates = coords;
-	point_class = pc;
 }
 
 std::vector<float> Point::getCoordinates(){
 	return coordinates;
 }
 
-bool Point::getClass(){
-	return point_class;
+std::string Point::stringify(){
+    std::string s = "";
+    for(std::vector<float>::iterator it = coordinates.begin(); it != coordinates.end(); it++){
+        s += std::to_string(*it);
+        s += ", ";
+    }
+    return s;
 }
