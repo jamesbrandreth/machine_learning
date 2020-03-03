@@ -46,7 +46,6 @@ std::vector<ClassifiedPoint> util::loadClassifiedPointsFromCSV(const char filepa
         std::vector<float> row;
         std::string cell;
         if(line != ""){
-            std::cout << line;
             std::stringstream stream_line(line);
             while(std::getline(stream_line, cell, ',')){
                 if (column_counter == class_column) {

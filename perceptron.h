@@ -4,13 +4,14 @@
 #define PERCEPTRON
 
 #include "point.h"
+#include "binary_classifier.h"
 
 #include <numeric>
 #include <vector>
 
 using namespace std;
 
-class Perceptron {
+class Perceptron: public BinaryClassifier {
 private:
 
 	std::vector<float> weights;
@@ -20,7 +21,7 @@ public:
 
 	void set_weights(vector<float> w);
 	bool train(vector<Point> points, float learning_rate=1, int iteration_limit=100);
-	float infer(Point pt);
+	bool infer(Point pt);
 	std::vector<float> getWeights();
 };
 

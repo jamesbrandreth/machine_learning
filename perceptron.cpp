@@ -46,7 +46,7 @@ bool Perceptron::train(vector<Point> points, float learning_rate, int iteration_
     return false;
 };
 
-float Perceptron::infer(Point pt){
+bool Perceptron::infer(Point pt){
      if (dist(pt) < 0) {
          return false;
      } else {

@@ -1,4 +1,4 @@
-// Point
+// Classified Point
 #ifndef CLASSIFIEDPOINT
 #define CLASSIFIEDPOINT
 
