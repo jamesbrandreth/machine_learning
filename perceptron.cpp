@@ -12,7 +12,7 @@ void Perceptron::set_weights(vector<float> w){
     weights = w;
 };
 
-bool Perceptron::train(vector<Point> points, float learning_rate, int iteration_limit){
+bool Perceptron::train(vector<BinaryPoint> points, float learning_rate, int iteration_limit){
     /*
     Takes a vector of points, and finds a set of weights
     */
@@ -21,9 +21,9 @@ bool Perceptron::train(vector<Point> points, float learning_rate, int iteration_
     while (i < iteration_limit && !converged){
         // Iterate until convergence or hitting the limit
         converged = true;
-        for(std::vector<Point>::iterator it_pt = points.begin(); it_pt != points.end(); it_pt++){
+        for(std::vector<BinaryPoint>::iterator it_pt = points.begin(); it_pt != points.end(); it_pt++){
             // iterate through each point, evaluating the inferred class each time
-            Point pt = *it_pt;
+            BinaryPoint pt = *it_pt;
             bool result = infer(pt);
             if(result != pt.getClass()){
                 // If the point is missclassified, adjust the weights:

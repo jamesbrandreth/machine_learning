@@ -10,6 +10,6 @@ class BinaryClassifier {
 public:
     virtual void train(std::vector<Point> data);
     virtual bool infer(Point point);
-}
+};
 
 #endif

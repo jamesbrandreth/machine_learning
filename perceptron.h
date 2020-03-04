@@ -3,7 +3,8 @@
 #ifndef PERCEPTRON
 #define PERCEPTRON
 
-#include "point.h"
+#include "binary_point.h"
+#include "classified_point.h"
 #include "binary_classifier.h"
 
 #include <numeric>
@@ -20,7 +21,7 @@ private:
 public:
 
 	void set_weights(vector<float> w);
-	bool train(vector<Point> points, float learning_rate=1, int iteration_limit=100);
+	bool train(vector<BinaryPoint> points, float learning_rate=1, int iteration_limit=100);
 	bool infer(Point pt);
 	std::vector<float> getWeights();
 };
