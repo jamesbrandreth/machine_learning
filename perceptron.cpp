@@ -8,11 +8,11 @@ float Perceptron::dist(Point pt){
 
 };
 
-void Perceptron::set_weights(vector<float> w){
+void Perceptron::set_weights(std::vector<float> w){
     weights = w;
 };
 
-bool Perceptron::train(vector<BinaryPoint> points, float learning_rate, int iteration_limit){
+bool Perceptron::train(std::vector<BinaryPoint> points, float learning_rate, int iteration_limit){
     /*
     Takes a vector of points, and finds a set of weights
     */
@@ -55,6 +55,6 @@ bool Perceptron::infer(Point pt){
 };
 
 
-vector<float> Perceptron::getWeights(){
+std::vector<float> Perceptron::getWeights(){
     return weights;
 };
