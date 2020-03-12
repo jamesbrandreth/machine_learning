@@ -8,6 +8,7 @@
 #include "binary_point.h"
 #include "util.h"
 #include "perceptron.h"
+#include "multiclass_perceptron.h"
 
 
 using namespace std;
@@ -45,6 +46,9 @@ int main(int argc, const char * argv[]){
     result = false;
     string res = result ? "TRUE" : "FALSE";
     cout << res << "\n";
+    
+    MuliclassPerceptron Mp;
+    Mp.train(points, 1, 100);
     
 
 	return 0;
