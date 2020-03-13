@@ -11,12 +11,12 @@
 
 class MuliclassPerceptron {
 private:
-    std::set< std::string > classes;
+    std::vector< std::string > classes;
     std::vector< Perceptron > classifiers;
 
 public:
     virtual void train(std::vector<ClassifiedPoint> points, float learning_rate=1, int iteration_limit=100);
-//    virtual ClassifiedPoint infer(Point pt);
+    virtual ClassifiedPoint infer(Point pt);
 };
 
 #endif

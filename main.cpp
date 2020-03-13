@@ -47,9 +47,18 @@ int main(int argc, const char * argv[]){
     string res = result ? "TRUE" : "FALSE";
     cout << res << "\n";
     
-    MuliclassPerceptron Mp;
-    Mp.train(points, 1, 100);
+    MuliclassPerceptron mp;
+    mp.train(points, 1, 100);
     
+    vector<Point> test_points = {};
+    for (vector<ClassifiedPoint>::iterator it = points.begin(); it!=points.end();it++) {
+        test_points.push_back(Point(it->getCoordinates()));
+    }
+    
+    for (vector<Point>::iterator it = test_points.begin(); it!=test_points.end();it++) {
+        Point pt = *it;
+        cout << pt.stringify() << " is " << mp.infer(pt).getClass() <<"\n";
+    }
 
 	return 0;
 }
