@@ -16,6 +16,15 @@ bool Perceptron::train(std::vector<BinaryPoint> points, float learning_rate, int
     /*
     Takes a vector of points, and finds a set of weights
     */
+    
+    // Set weights to 0
+    int dimensions = 0;
+    if (points.size()>0) {
+        dimensions = points[0].getCoordinates().size() + 1;
+    }
+    std::vector<float> w(dimensions, 0.0);
+    Perceptron::set_weights(w);
+    
     bool converged = false;
     int i=0;
     while (i < iteration_limit && !converged){

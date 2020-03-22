@@ -57,8 +57,23 @@ int main(int argc, const char * argv[]){
     
     for (vector<Point>::iterator it = test_points.begin(); it!=test_points.end();it++) {
         Point pt = *it;
-        cout << pt.stringify() << " is " << mp.infer(pt).getClass() <<"\n";
+        ClassifiedPoint cp = mp.infer(pt);
+        cout << pt.stringify() << " is " << cp.getClass() <<"\n";
     }
+    
+    vector<string> classes = mp.getClasses();
+    vector<Perceptron> perceptrons = mp.getClassifiers();
+    
+    for (int i=0; i<classes.size();i++){
+        vector<float> weights = perceptrons[i].getWeights();
+        cout << classes[i] << "\t";
+        for (vector<float>::iterator it = weights.begin(); it != weights.end(); it++){
+            float n = *it;
+            cout << n << " ";
+        }
+        cout << endl;
+    }
+    
 
 	return 0;
 }

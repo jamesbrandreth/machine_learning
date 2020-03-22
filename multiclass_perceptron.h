@@ -17,6 +17,8 @@ private:
 public:
     virtual void train(std::vector<ClassifiedPoint> points, float learning_rate=1, int iteration_limit=100);
     virtual ClassifiedPoint infer(Point pt);
+    virtual std::vector<Perceptron> getClassifiers();
+    virtual std::vector<std::string> getClasses();
 };
 
 #endif
