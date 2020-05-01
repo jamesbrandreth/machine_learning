@@ -17,9 +17,9 @@ using namespace util;
 
 int main(int argc, const char * argv[]){
     
-    cout << "START";
+    cout << "START" << endl;
     
-    cout << "TESTING loading" << "\n";
+    cout << "TESTING loading" << endl;
 	
     vector<ClassifiedPoint> points;
 
@@ -45,34 +45,34 @@ int main(int argc, const char * argv[]){
     bool result = perceptron.infer(Point({1.0,2.0}));
     result = false;
     string res = result ? "TRUE" : "FALSE";
-    cout << res << "\n";
+    cout << res << endl;
     
-    MuliclassPerceptron mp;
-    mp.train(points, 1, 100);
-    
-    vector<Point> test_points = {};
-    for (vector<ClassifiedPoint>::iterator it = points.begin(); it!=points.end();it++) {
-        test_points.push_back(Point(it->getCoordinates()));
-    }
-    
-    for (vector<Point>::iterator it = test_points.begin(); it!=test_points.end();it++) {
-        Point pt = *it;
-        ClassifiedPoint cp = mp.infer(pt);
-        cout << pt.stringify() << " is " << cp.getClass() <<"\n";
-    }
-    
-    vector<string> classes = mp.getClasses();
-    vector<Perceptron> perceptrons = mp.getClassifiers();
-    
-    for (int i=0; i<classes.size();i++){
-        vector<float> weights = perceptrons[i].getWeights();
-        cout << classes[i] << "\t";
-        for (vector<float>::iterator it = weights.begin(); it != weights.end(); it++){
-            float n = *it;
-            cout << n << " ";
-        }
-        cout << endl;
-    }
+//    MuliclassPerceptron mp;
+//    mp.train(points, 1, 100);
+//
+//    vector<Point> test_points = {};
+//    for (vector<ClassifiedPoint>::iterator it = points.begin(); it!=points.end();it++) {
+//        test_points.push_back(Point(it->getCoordinates()));
+//    }
+//
+//    for (vector<Point>::iterator it = test_points.begin(); it!=test_points.end();it++) {
+//        Point pt = *it;
+//        ClassifiedPoint cp = mp.infer(pt);
+//        cout << pt.stringify() << " is " << cp.getClass() <<"\n";
+//    }
+//
+//    vector<string> classes = mp.getClasses();
+//    vector<Perceptron> perceptrons = mp.getClassifiers();
+//
+//    for (int i=0; i<classes.size();i++){
+//        vector<float> weights = perceptrons[i].getWeights();
+//        cout << classes[i] << "\t";
+//        for (vector<float>::iterator it = weights.begin(); it != weights.end(); it++){
+//            float n = *it;
+//            cout << n << " ";
+//        }
+//        cout << endl;
+//    }
     
 
 	return 0;

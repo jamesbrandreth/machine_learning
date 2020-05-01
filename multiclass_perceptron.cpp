@@ -1,4 +1,5 @@
 #include "multiclass_perceptron.h"
+#include "util.h"
 
 void MuliclassPerceptron::train(std::vector<ClassifiedPoint> points, float learning_rate, int iteration_limit) {
     
@@ -53,6 +54,7 @@ ClassifiedPoint MuliclassPerceptron::infer(Point pt) {;
     
     for (int i = 0; i<classes.size(); i++){
         if (classifiers[i].infer(pt)) {
+//        	LOG(classes[i]);
             tags.insert(classes[i]);
         }
     }

@@ -1,14 +1,12 @@
 #ifndef UTIL
 #define UTIL
 
-#include <fstream>
-#include <sstream>
-#include <set>
 #include <iostream>
-#include <vector>
 
 #include "point.h"
 #include "classified_point.h"
+
+#define LOG(message) std::cout << message << std::endl
 
 namespace util {
     std::vector<Point> loadPointsFromCSV(const char filepath[]);
