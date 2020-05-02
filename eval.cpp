@@ -2,19 +2,23 @@
 // Created by james on 30/04/2020.
 //
 
+#include "eval.h"
+
+void printLine(int width_1, int width_2) {
+	std::cout << "+";
+	for (int i=0; i<width_1; i++) {
+		std::cout << "-";
+	}
+	std::cout << "+";
+	for (int i=0; i<width_2; i++) {
+		std::cout << "-";
+	}
+	std::cout << "+" << std::endl;
+}
+
 void eval::confusion(std::vector<TestResult> test_data) {
 
-	void printLine(int width_1, int width_2) {
-		std::cout << "+";
-		for (int i=0; i<width_1; i++) {
-			std::cout << "-";
-		}
-		std::cout << "+";
-		for (int i=0; i<width_2; i++) {
-			std::cout << "-";
-		}
-		std::cout << "+" << std::endl;
-	}
+
 
 	// Generate confusion matrix
 	int matrix[2][2] = {{0,0},{0,0}};
@@ -28,8 +32,8 @@ void eval::confusion(std::vector<TestResult> test_data) {
 	std::string fp = std::to_string(matrix[1][0]);
 	std::string fn = std::to_string(matrix[0][1]);
 
-	int col_1_width = sdt::max(tp.size(), fn.size()) + 2;
-	int col_2_width = sdt::max(fp.size(), tn.size()) + 2;
+	int col_1_width = std::max(tp.size(), fn.size()) + 2;
+	int col_2_width = std::max(fp.size(), tn.size()) + 2;
 
 	// Print table header
 	printLine(col_1_width,col_2_width);

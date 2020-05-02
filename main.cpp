@@ -9,6 +9,8 @@
 #include "util.h"
 #include "perceptron.h"
 #include "multiclass_perceptron.h"
+#include "eval.h"
+#include "test_result.cpp"
 
 
 using namespace std;
@@ -18,34 +20,47 @@ using namespace util;
 int main(int argc, const char * argv[]){
     
     cout << "START" << endl;
-    
-    cout << "TESTING loading" << endl;
-	
-    vector<ClassifiedPoint> points;
 
-    points = loadClassifiedPointsFromCSV(argv[1], stoi(argv[2]));
+
+    vector<TestResult> results;
+	results.push_back({true, true});
+	results.push_back({true, false});
+	results.push_back({true, false});
+	results.push_back({false, true});
+	results.push_back({false, false});
+	results.push_back({true, false});
+	results.push_back({true, true});
+
+	eval::confusion(results);
+
     
-    for (vector<ClassifiedPoint>::iterator it = points.begin(); it != points.end(); it++){
-        ClassifiedPoint point = *it;
-        cout << "ROW: " << point.stringify() << "\n";
-    }
-    
-    vector<BinaryPoint>binary_points;
-    binary_points.push_back(BinaryPoint({0.0,0.0}, true));
-    binary_points.push_back(BinaryPoint({1.0,0.0}, true));
-    binary_points.push_back(BinaryPoint({2.0,0.0}, true));
-    binary_points.push_back(BinaryPoint({0.0,1.0}, false));
-    binary_points.push_back(BinaryPoint({1.0,1.0}, false));
-    binary_points.push_back(BinaryPoint({2.0,1.0}, false));
-    
-    Perceptron perceptron;
-    perceptron.set_weights({1.0,1.0,1.0});
-    perceptron.train(binary_points);
-    
-    bool result = perceptron.infer(Point({1.0,2.0}));
-    result = false;
-    string res = result ? "TRUE" : "FALSE";
-    cout << res << endl;
+//    cout << "TESTING loading" << endl;
+//
+//    vector<ClassifiedPoint> points;
+//
+//    points = loadClassifiedPointsFromCSV(argv[1], stoi(argv[2]));
+//
+//    for (vector<ClassifiedPoint>::iterator it = points.begin(); it != points.end(); it++){
+//        ClassifiedPoint point = *it;
+//        cout << "ROW: " << point.stringify() << "\n";
+//    }
+//
+//    vector<BinaryPoint>binary_points;
+//    binary_points.push_back(BinaryPoint({0.0,0.0}, true));
+//    binary_points.push_back(BinaryPoint({1.0,0.0}, true));
+//    binary_points.push_back(BinaryPoint({2.0,0.0}, true));
+//    binary_points.push_back(BinaryPoint({0.0,1.0}, false));
+//    binary_points.push_back(BinaryPoint({1.0,1.0}, false));
+//    binary_points.push_back(BinaryPoint({2.0,1.0}, false));
+//
+//    Perceptron perceptron;
+//    perceptron.set_weights({1.0,1.0,1.0});
+//    perceptron.train(binary_points);
+//
+//    bool result = perceptron.infer(Point({1.0,2.0}));
+//    result = false;
+//    string res = result ? "TRUE" : "FALSE";
+//    cout << res << endl;
     
 //    MuliclassPerceptron mp;
 //    mp.train(points, 1, 100);

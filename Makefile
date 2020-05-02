@@ -2,8 +2,8 @@ CC=g++
 
 all: main
 
-main: main.o point.o binary_point.o classified_point.o util.o perceptron.o multiclass_perceptron.o
-	$(CC) -std=c++11 main.o point.o binary_point.o classified_point.o util.o perceptron.o multiclass_perceptron.o -o main
+main: main.o point.o binary_point.o classified_point.o perceptron.o multiclass_perceptron.o eval.o test_result.o
+	$(CC) -std=c++11 main.o point.o binary_point.o classified_point.o perceptron.o multiclass_perceptron.o eval.o test_result.o -o main
 
 main.o: main.cpp
 	$(CC) -std=c++11 -c main.cpp
@@ -16,15 +16,18 @@ binary_point.o: binary_point.cpp
 
 classified_point.o: classified_point.cpp
 	$(CC) -std=c++11 -c classified_point.cpp
-		
-util.o: util.cpp
-	$(CC) -std=c++11 -c util.cpp
 	
 perceptron.o: perceptron.cpp
 	$(CC) -std=c++11 -c perceptron.cpp
 
 multiclass_perceptron.o: multiclass_perceptron.cpp
 	$(CC) -std=c++11 -c multiclass_perceptron.cpp
+
+eval.o: eval.cpp
+	$(CC) -std=c++11 -c eval.cpp
+
+test_result.o: test_result.cpp
+	$(CC) -std=c++11 -c test_result.cpp
 
 clean:
 	rm -rf *o main

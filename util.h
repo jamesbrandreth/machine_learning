@@ -2,6 +2,7 @@
 #define UTIL
 
 #include <iostream>
+#include <fstream>
 
 #include "point.h"
 #include "classified_point.h"
