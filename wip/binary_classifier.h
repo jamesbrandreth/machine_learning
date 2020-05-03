@@ -3,8 +3,8 @@
 
 #include <vector>
 
-#include "point.h"
-#include "binary_point.h"
+#include "../src/point.h"
+#include "../src/binary_point.h"
 
 class BinaryClassifier {
     

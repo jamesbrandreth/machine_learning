@@ -2,7 +2,7 @@
 #ifndef MULTICLASSWRAPPERCLASSIFIER
 #define MULTICLASSWRAPPERCLASSIFIER
 
-#include "classified_point.h"
+#include "../src/classified_point.h"
 
 template <class T>
 class MuliclassWrapperClassifier {

@@ -3,7 +3,7 @@
 #ifndef SVM
 #define SVM
 
-#include "binary_point.h"
+#include "../src/binary_point.h"
 #include "binary_classifier.h"
 
 #include <numeric>

@@ -8,7 +8,7 @@
 #include <set>
 #include <iostream>
 
-#include "point.h"
+#include "../src/point.h"
 
 class Space {
 private:

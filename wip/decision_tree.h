@@ -3,7 +3,7 @@
 #ifndef DECISION_TREE
 #define DECISION_TREE
 
-#include "point.h"
+#include "../src/point.h"
 #include "node.h"
 
 class Decision_tree{

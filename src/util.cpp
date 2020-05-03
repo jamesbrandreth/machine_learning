@@ -1,5 +1,6 @@
 
 #include "util.h"
+#include <sstream>
 
 std::vector< Point > util::loadPointsFromCSV(const char filename[]){
     
