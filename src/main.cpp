@@ -30,6 +30,32 @@ int main(int argc, const char * argv[]){
 	results.push_back({false, false});
 	results.push_back({true, false});
 	results.push_back({true, true});
+	results.push_back({true, false});
+	results.push_back({false, true});
+	results.push_back({false, false});
+	results.push_back({true, false});
+	results.push_back({true, true});
+	results.push_back({true, false});
+	results.push_back({false, true});
+	results.push_back({false, false});
+	results.push_back({true, false});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
+	results.push_back({true, true});
 
 	eval::confusion(results);
 
