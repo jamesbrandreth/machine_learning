@@ -23,8 +23,8 @@ void eval::confusion(std::vector<TestResult> test_data) {
 	// Generate confusion matrix
 	int matrix[2][2] = {{0, 0},
 						{0, 0}};
-	for (std::vector<TestResult>::iterator it = test_data.begin(); it != test_data.end(); it++) {
-		matrix[(*it).predicted_label][(*it).true_label]++;
+	for (auto & it : test_data) {
+		matrix[it.predicted_label][it.true_label]++;
 	}
 
 	// Print confusion matrix

@@ -1,7 +1,7 @@
-// perceptron class
+// SVM Class
 
-#ifndef PERCEPTRON
-#define PERCEPTRON
+#ifndef SVM
+#define SVM
 
 #include "point.h"
 #include "binary_point.h"
@@ -11,17 +11,17 @@
 #include <vector>
 #include <iostream>
 
-
-class Perceptron{
+class Svm{
 private:
 	std::vector<float> weights;
 	float dist(Point pt);
 
 public:
-	void set_weights(std::vector<float> weights);
-	bool train(std::vector<BinaryPoint> points, float learning_rate=1, int iteration_limit=100);
-	bool infer(Point pt);
+	void train(std::vector<BinaryPoint> data);
+	BinaryPoint infer(Point);
 	std::vector<float> getWeights();
+	float loss(std::vector<BinaryPoint> x);
+	std::vector<float> loss_gradient();
 };
 
 #endif
